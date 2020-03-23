@@ -17,5 +17,5 @@ Pod::Spec.new do |s|
   s.swift_version = '5.0'
 
   s.source_files = 'Sources/YoutubePlayerView/*.swift'
-	s.resources = "Sources/YoutubePlayerView/YoutubePlayerView.bundle"
+  s.resources = "*.xcassets"
 end
