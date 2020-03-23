@@ -193,7 +193,7 @@ open class YoutubePlayerView: UIView {
                     webView.isOpaque = false
                 }
             }
-            
+
             let htmlString = String(format: YoutubePlayerUtils.htmlString, url.0)
             webView.loadHTMLString(htmlString, baseURL: URL(string: url.1))
             
