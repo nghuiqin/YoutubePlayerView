@@ -26,8 +26,19 @@
 import Foundation
 
 enum YoutubePlayerUtils {
+	static var htmlPath: String {
+		if let path = Bundle(for: YoutubePlayerView.self).path(forResource: "youtubeplayer", ofType: "html") {
+			return path
+		}
+		return Bundle.main.path(forResource: "youtubeplayer", ofType: "html") ?? ""
+	}
+
     static var htmlString: String {
-        return "<head>\(script)<meta name=viewport content='width=device-width, initial-scale=1'>\(style)</head><iframe id='existing-iframe-example' width='100%%' height='100%%' src='%@' frameborder='0' allowfullscreen></iframe>"
+		if htmlPath.isEmpty == false, let content = try? String(contentsOfFile: htmlPath) {
+			return content
+		}
+		return "<head>\(script)<meta name=viewport content='width=device-width, initial-scale=1'>\(style)</head><iframe id='existing-iframe-example' src='%@' frameborder='0' allowfullscreen></iframe>"
+
     }
 	private static var style: String {
 		return """
