@@ -28,7 +28,7 @@ import Foundation
 enum YoutubePlayerUtils {
 
     static var htmlString: String {
-		return "<head>\(script)<meta name=viewport content='width=device-width, initial-scale=1'>\(style)</head><iframe id='existing-iframe-example' src='%@' frameborder='0' allowfullscreen></iframe>"
+		return oldHTML
 
     }
 
@@ -62,7 +62,14 @@ enum YoutubePlayerUtils {
 			var error = false;
 
 			YT.ready(function() {
-				player = new YT.Player('player', %@);
+				player = new YT.Player('player', {
+					events: {
+					'onReady': onReady,
+					'onStateChange': onStateChange,
+					'onPlaybackQualityChange': onPlaybackQualityChange,
+					'onError': onPlayerError
+					}
+				});
 				player.setSize(window.innerWidth, window.innerHeight);
 				window.location.href = 'ytplayer://onYouTubeIframeAPIReady';
 

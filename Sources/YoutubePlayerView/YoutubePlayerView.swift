@@ -109,8 +109,14 @@ open class YoutubePlayerView: UIView {
         } else {
             webConfiguration.requiresUserActionForMediaPlayback = false
         }
-        
-        webConfiguration.allowsInlineMediaPlayback = true
+
+		let userScriptString = "var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);"
+		let userScript = WKUserScript(source: userScriptString, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+		let userContentController = WKUserContentController()
+		userContentController.addUserScript(userScript)
+		webConfiguration.userContentController = userContentController
+
+		webConfiguration.allowsInlineMediaPlayback = true
         return webConfiguration
     }
     
