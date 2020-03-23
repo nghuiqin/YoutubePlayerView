@@ -28,14 +28,14 @@ import Foundation
 enum YoutubePlayerUtils {
 
     static var htmlString: String {
-		return "<head>\(script)\(style)</head><iframe id='existing-iframe-example' src='%@' frameborder='0' allowfullscreen></iframe>"
+		return "<head>\(script)\(style)</head><iframe id='existing-iframe-example' src='%@' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
 
     }
 
 	private static var style: String {
 		return """
 		<style type='text/css'>
-		body {
+		body, html {
 			padding: 0;
 		    margin: 0;
 			width: 100%;
