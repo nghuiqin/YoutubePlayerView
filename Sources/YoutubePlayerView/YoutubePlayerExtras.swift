@@ -108,10 +108,6 @@ enum YoutubePlayerUtils {
                 }
                 window.location.href = 'ytplayer://onError?data=' + event.data;
             }
-        
-            window.onresize = function() {
-                player.setSize(window.innerWidth, window.innerHeight);
-            }
         </script>
         """
     }
