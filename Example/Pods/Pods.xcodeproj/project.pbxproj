@@ -114,7 +114,7 @@
 			name = Pod;
 			sourceTree = "<group>";
 		};
-		4413B5492428C61100D25270 /* YoutubePlayerView.bundle */ = {
+		4413B5592428CA8500D25270 /* YoutubePlayerView.bundle */ = {
 			isa = PBXGroup;
 			children = (
 				4413B54A2428C91E00D25270 /* youtubeplayer.html */,
@@ -169,7 +169,7 @@
 			children = (
 				CF5EE581264A87E0270C2671843BF384 /* YoutubePlayerExtras.swift */,
 				A31D91473A9AE87C7D84567983F897ED /* YoutubePlayerView.swift */,
-				4413B5492428C61100D25270 /* YoutubePlayerView.bundle */,
+				4413B5592428CA8500D25270 /* YoutubePlayerView.bundle */,
 				158507F800511421434B74E46D6E4CAD /* Pod */,
 				D7874586E5287A665AF0A3AAB159BAF6 /* Support Files */,
 			);
