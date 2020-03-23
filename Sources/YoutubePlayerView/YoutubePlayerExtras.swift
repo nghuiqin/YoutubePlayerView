@@ -27,8 +27,23 @@ import Foundation
 
 enum YoutubePlayerUtils {
     static var htmlString: String {
-        return "<head>\(script)<meta name=viewport content='width=device-width, initial-scale=1'><style type='text/css'> body { margin: 0;} </style></head><iframe id='existing-iframe-example' width='100%%' height='100%%' src='%@' frameborder='0' allowfullscreen></iframe>"
+        return "<head>\(script)<meta name=viewport content='width=device-width, initial-scale=1'>\(style)</head><iframe id='existing-iframe-example' width='100%%' height='100%%' src='%@' frameborder='0' allowfullscreen id='YoutubePlayer'></iframe>"
     }
+	private static var style: String {
+		return """
+		<style type='text/css'>
+		body {
+		    margin: 0;
+		    width: 100%;
+		    height: 100%;
+		}
+		#YoutubePlayer {
+		    width: 100%;
+		    height: 100%;
+		}
+		</style>
+		"""
+	}
     
     private static var script: String {
         return """
